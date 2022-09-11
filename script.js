@@ -14,13 +14,11 @@ let response = $.ajax("https://api.adviceslip.com/advice");
 console.log(response);
 
 $.ajax("https://api.adviceslip.com/advice", {
+  dataType: "json",
   success: function (APIResponse) {
-    console.log(APIResponse);
-
     let adviceTag = document.createElement("p");
 
-    adviceTag.innerHTML = APIResponse;
-    // I couldn't figure out how to fetch the advice phrase from the API...
+    adviceTag.innerHTML = APIResponse.slip.advice;
 
     document.getElementById("advice").appendChild(adviceTag);
   },
