@@ -20,6 +20,7 @@ $.ajax("https://api.adviceslip.com/advice", {
     let adviceTag = document.createElement("p");
 
     adviceTag.innerHTML = APIResponse;
+    // I couldn't figure out how to fetch the advice phrase from the API...
 
     document.getElementById("advice").appendChild(adviceTag);
   },
