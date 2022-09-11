@@ -11,15 +11,10 @@ console.log(response);
 
 $.ajax("https://api.adviceslip.com/advice", {
   success: function (APIResponse) {
-    let myDiv = document.createElement("div");
-
-    // Creating a paragraph element and adding the innerHTML
     let adviceTag = document.createElement("p");
+
     adviceTag.innerHTML = APIResponse;
 
-    // Appending the paragraph tags to the created div element
-    myDiv.appendChild(adviceTag);
-
-    document.body.appendChild(myDiv);
+    document.getElementById("advice").appendChild(adviceTag);
   },
 });
